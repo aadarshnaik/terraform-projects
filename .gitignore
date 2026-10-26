@@ -1,0 +1,7 @@
+terraform.tfstate
+terraform.tfstate.backup
+.terraform
+keys/terra-key-ec2
+RemoteInfra/terraform.tfstate
+RemoteInfra/terraform.tfstate.backup
+
