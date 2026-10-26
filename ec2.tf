@@ -11,7 +11,7 @@ resource "aws_default_vpc" "default" {
 }
 
 resource "aws_security_group" "my_security_group" {
-  name        = "my-sg"
+  name        = "${var.env}-automate-sg"
   description = "Allow TLS inbound traffic and all outbound traffic"
   vpc_id      = aws_default_vpc.default.id
 
@@ -46,7 +46,7 @@ resource "aws_security_group" "my_security_group" {
     protocol    = "-1"
   }
   tags = {
-    Name = "automate-sg"
+    Name = "${var.env}-automate-sg"
   }
 }
 
