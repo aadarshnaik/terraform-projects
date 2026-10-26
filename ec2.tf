@@ -53,8 +53,7 @@ resource "aws_security_group" "my_security_group" {
 resource "aws_instance" "my-vm" {
   # count           = 2 #meta argument
   for_each = tomap({
-    TWS-Junoon-automate-t2 = "t2.micro",
-    TWS-Junoon-automate-t3 = "t3.micro"
+    TWS-Junoon-automate-t2 = "t2.medium",
   })
   depends_on = [aws_security_group.my_security_group, aws_key_pair.my_key]
   key_name        = aws_key_pair.my_key.key_name
